@@ -2,13 +2,13 @@ node.reverse_merge!(
   os: run_command('uname').stdout.strip.downcase,
 )
 
-# define :dotfile, source: nil do
-#   source = params[:source] || params[:name]
-#   link File.join(ENV['HOME'], params[:name]) do
-#     to File.expand_path("../../../config/#{source}", __FILE__)
-#     user node[:user]
-#   end
-# end
+define :dotfile, source: nil do
+  source = params[:source] || params[:name]
+  link File.join(ENV['HOME'], "." + params[:name]) do
+    to File.expand_path("../../../dotfiles/#{source}", __FILE__)
+    user node[:user]
+  end
+end
 
 define :github_binary, version: nil, repository: nil, archive: nil, binary_path: nil do
   cmd = params[:name]

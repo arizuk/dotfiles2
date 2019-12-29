@@ -1,8 +1,17 @@
 include_role 'base'
 
 include_cookbook "homebrew"
-include_cookbook "zsh"
-include_cookbook "git"
+
 include_cookbook "ghq"
+include_cookbook "git"
 include_cookbook "tmux"
 include_cookbook "vim"
+include_cookbook "zsh"
+
+package "coreutils"
+package "htop-osx"
+package "nkf"
+package "the_silver_searcher"
+package "tig"
+package "tree"
+package "wget"
