@@ -8,12 +8,22 @@ directory "#{ENV['HOME']}/bin" do
   owner node[:user]
 end
 
-define :link_to_home_bin do
+define :home_bin_link do
   path = params[:name]
   bin_name = File.basename(path)
   link File.join(node[:bin_dir], bin_name) do
     to path
     user node[:user]
+  end
+end
+
+define :shell_rc_block do
+  cmd = params[:name]
+  file node[:shell_rc_file] do
+    action :edit
+    block do |content|
+        content << "\n" + cmd unless content.include?(cmd)
+    end
   end
 end
 

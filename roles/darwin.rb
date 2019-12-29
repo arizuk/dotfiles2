@@ -14,6 +14,7 @@ include_cookbook "vim"
 
 package "bat"
 package "coreutils"
+package "gnu-sed"
 package "htop-osx"
 package "nkf"
 package "the_silver_searcher"

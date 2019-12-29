@@ -7,7 +7,7 @@ file "#{ENV['HOME']}/.gitignore_global" do
 end
 
 if darwin?
-    link_to_home_bin '/usr/local/share/git-core/contrib/diff-highlight/diff-highlight'
+    home_bin_link '/usr/local/share/git-core/contrib/diff-highlight/diff-highlight'
 else
     raise NotImplementedError
 end
