@@ -2,7 +2,7 @@
 
 set -eu
 
-version='1.7.5'
+version='1.9.7'
 mitamae_version="mitamae-${version}"
 
 if ! [ -f "bin/${mitamae_version}" ]; then
