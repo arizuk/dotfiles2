@@ -1,5 +1,6 @@
 node.reverse_merge!(
   os: run_command('uname').stdout.strip.downcase,
+  bin_dir: "#{ENV['HOME']}/bin" 
 )
 
 directory "#{ENV['HOME']}/bin" do
@@ -9,7 +10,7 @@ end
 define :link_to_home_bin do
   path = params[:name]
   bin_name = File.basename(path)
-  link File.join(ENV['HOME'], "bin", bin_name) do
+  link File.join(node[:bin_dir], bin_name) do
     to path
     user node[:user]
   end

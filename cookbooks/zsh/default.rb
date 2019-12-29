@@ -17,11 +17,13 @@ else
     raise NotImplementedError
 end
 
+remote_file "#{node[:bin_dir]}/preview.sh" do
+    owner node[:user]
+    mode "755"
+    source "files/preview.sh"
+end
 
 dotfile "zshrc"
 file "#{ENV['HOME']}/.zshrc.local" do 
     owner node[:user]
 end
-
-
-include_cookbook "skim"
