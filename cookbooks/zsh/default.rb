@@ -24,6 +24,8 @@ remote_file "#{node[:bin_dir]}/preview.sh" do
 end
 
 dotfile "zshrc"
+dotfile "zshrc.d"
+
 file "#{ENV['HOME']}/.zshrc.local" do 
     owner node[:user]
 end
