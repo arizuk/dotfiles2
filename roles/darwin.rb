@@ -6,6 +6,7 @@ include_cookbook "z"
 include_cookbook "zsh"
 
 include_cookbook "anyenv"
+include_cookbook "direnv"
 include_cookbook "ghq"
 include_cookbook "git"
 include_cookbook "tmux"

@@ -2,13 +2,13 @@ git "#{ENV['HOME']}/.anyenv" do
     repository "https://github.com/anyenv/anyenv"
 end
 
-file "#{ENV['HOME']}/.zshrc.local" do
+file node[:shell_rc_file] do
     action :edit
     block do |content|
-        code = 'export PATH="$HOME/.anyenv/bin:$PATH"'
-        content << "\n" + code unless content.include?(code)
+        cmd = 'export PATH="$HOME/.anyenv/bin:$PATH"'
+        content << "\n" + cmd unless content.include?(cmd)
 
-        code = 'eval "$(anyenv init -)"'
-        content << "\n" + code unless content.include?(code)
+        cmd = 'eval "$(anyenv init -)"'
+        content << "\n" + cmd unless content.include?(cmd)
     end
 end

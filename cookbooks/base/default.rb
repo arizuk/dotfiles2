@@ -1,6 +1,7 @@
 node.reverse_merge!(
   os: run_command('uname').stdout.strip.downcase,
-  bin_dir: "#{ENV['HOME']}/bin" 
+  bin_dir: "#{ENV['HOME']}/bin",
+  shell_rc_file: "#{ENV['HOME']}/.zshrc.local",
 )
 
 directory "#{ENV['HOME']}/bin" do
