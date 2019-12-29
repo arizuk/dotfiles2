@@ -1,7 +1,7 @@
-ZSH=$HOME/.repos/oh-my-zsh
+ZSH=$HOME/.oh-my-zsh
 
-if [[ -d "$HOME/.repos/zsh-completions/src" ]]; then
-	fpath=($fpath ~/.repos/zsh-completions/src)
+if [[ -d "$HOME/.zsh-completions/src" ]]; then
+	fpath=($fpath ~/.zsh-completions/src)
 fi
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
@@ -35,7 +35,7 @@ alias -g "$"="|xargs -o"
 alias -g L="|less"
 
 # z
-source ~/.repos/z/z.sh;
+source ~/.z.sh/z.sh;
 
 setopt extended_glob
 setopt auto_param_keys # カッコの対応などを自動的に補完
