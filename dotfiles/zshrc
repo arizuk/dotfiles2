@@ -13,9 +13,6 @@ if [ `uname` = 'Darwin' ]; then
 fi
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # prompt
 eval "$(starship init zsh)"
 
