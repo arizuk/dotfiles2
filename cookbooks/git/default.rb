@@ -11,3 +11,6 @@ if darwin?
 else
     raise NotImplementedError
 end
+
+# vimdiff dependency
+include_cookbook 'vim'

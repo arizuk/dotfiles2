@@ -4,6 +4,7 @@ include_cookbook "homebrew"
 
 include_cookbook "ghq"
 include_cookbook "git"
+include_cookbook "skim"
 include_cookbook "tmux"
 include_cookbook "vim"
 include_cookbook "zsh"
