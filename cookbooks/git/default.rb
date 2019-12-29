@@ -1,1 +1,1 @@
-puts "git"
+package 'git'

@@ -1,4 +1,5 @@
 #!/bin/bash
 
-bin/setup_mitamae.sh
+bin/setup.sh
+
 bin/mitamae local recipe.rb
