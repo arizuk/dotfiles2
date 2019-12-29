@@ -2,9 +2,22 @@ node.reverse_merge!(
   os: run_command('uname').stdout.strip.downcase,
 )
 
+directory "#{ENV['HOME']}/bin" do
+  owner node[:user]
+end
+
+define :link_to_home_bin do
+  path = params[:name]
+  bin_name = File.basename(path)
+  link File.join(ENV['HOME'], "bin", bin_name) do
+    to path
+    user node[:user]
+  end
+end
+
 define :dotfile, source: nil do
   source = params[:source] || params[:name]
-  link File.join(ENV['HOME'], "." + params[:name]) do
+  link File.join(ENV['HOME'], '.' + params[:name]) do
     to File.expand_path("../../../dotfiles/#{source}", __FILE__)
     user node[:user]
   end

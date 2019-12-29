@@ -8,4 +8,8 @@ MItamae::RecipeContext.class_eval do
     root_dir = File.dirname(__FILE__)
     include_recipe File.join(root_dir, 'roles', name)
   end  
+
+  def darwin?
+    node[:platform] == 'darwin'
+  end
 end
