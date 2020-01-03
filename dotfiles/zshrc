@@ -66,3 +66,7 @@ for rc in `ls ~/.zshrc.d/*`; do
 done
 
 source ~/.zshrc.local;
+
+# TODO: 呼び出し削減
+autoload -U compinit
+compinit
