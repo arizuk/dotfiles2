@@ -1,10 +1,12 @@
 package "zsh"
 
 git "#{ENV['HOME']}/.oh-my-zsh" do
+    user node[:user]
     repository "https://github.com/ohmyzsh/ohmyzsh.git"
 end
 
 git "#{ENV['HOME']}/.zsh-completions" do
+    user node[:user]
     repository "https://github.com/zsh-users/zsh-completions"
 end
 

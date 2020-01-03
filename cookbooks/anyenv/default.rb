@@ -1,4 +1,5 @@
 git "#{ENV['HOME']}/.anyenv" do
+    user node[:user]
     repository "https://github.com/anyenv/anyenv"
 end
 

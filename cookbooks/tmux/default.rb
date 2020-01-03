@@ -7,5 +7,6 @@ file "#{ENV['HOME']}/.tmux.conf.local" do
 end
 
 git "#{ENV['HOME']}/.tmux/plugins/tpm" do
+    user node[:user]
     repository "https://github.com/tmux-plugins/tpm"
 end

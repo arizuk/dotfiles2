@@ -21,6 +21,7 @@ end
 define :shell_rc_block do
   cmd = params[:name]
   file node[:shell_rc_file] do
+    user node[:user]
     action :edit
     block do |content|
         content << "\n" + cmd unless content.include?(cmd)
@@ -51,13 +52,16 @@ define :github_binary, version: nil, repository: nil, archive: nil, binary_path:
   end
 
   execute "curl -fSL -o /tmp/#{archive} #{url}" do
+    user node[:user]
     not_if "test -f #{bin_path}"
   end
   execute "#{extract} /tmp/#{archive}" do
     not_if "test -f #{bin_path}"
     cwd "/tmp"
+    user node[:user]
   end
   execute "mv /tmp/#{params[:binary_path] || cmd} #{bin_path} && chmod +x #{bin_path}" do
     not_if "test -f #{bin_path}"
+    user node[:user]
   end
 end
