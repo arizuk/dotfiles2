@@ -8,7 +8,7 @@ directory "#{ENV['HOME']}/bin" do
   owner node[:user]
 end
 
-define :home_bin_link do
+define :executable_link do
   path = params[:name]
   bin_name = File.basename(path)
   link File.join(node[:bin_dir], bin_name) do
