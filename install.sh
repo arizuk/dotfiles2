@@ -2,4 +2,8 @@
 
 bin/setup.sh
 
-bin/mitamae local recipe.rb
+
+case "$(uname)" in
+  "Darwin")  bin/mitamae local $@ recipe.rb ;;
+  *) sudo -E bin/mitamae local $@ recipe.rb ;;
+esac
