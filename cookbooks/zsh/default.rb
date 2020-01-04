@@ -1,33 +1,32 @@
-package "zsh"
+package 'zsh'
 
 git "#{ENV['HOME']}/.oh-my-zsh" do
-    user node[:user]
-    repository "https://github.com/ohmyzsh/ohmyzsh.git"
+  user node[:user]
+  repository 'https://github.com/ohmyzsh/ohmyzsh.git'
 end
 
 git "#{ENV['HOME']}/.zsh-completions" do
-    user node[:user]
-    repository "https://github.com/zsh-users/zsh-completions"
+  user node[:user]
+  repository 'https://github.com/zsh-users/zsh-completions'
 end
 
-
 if darwin?
-    package 'starship'
-    package 'sk'
-    package 'bat'
+  package 'starship'
+  package 'sk'
+  package 'bat'
 else
-    raise NotImplementedError
+  raise NotImplementedError
 end
 
 remote_file "#{node[:bin_dir]}/preview.sh" do
-    owner node[:user]
-    mode "755"
-    source "files/preview.sh"
+  owner node[:user]
+  mode '755'
+  source 'files/preview.sh'
 end
 
-dotfile "zshrc"
-dotfile "zshrc.d"
+dotfile 'zshrc'
+dotfile 'zshrc.d'
 
-file "#{ENV['HOME']}/.zshrc.local" do 
-    owner node[:user]
+file "#{ENV['HOME']}/.zshrc.local" do
+  owner node[:user]
 end
