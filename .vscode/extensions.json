@@ -1,0 +1,31 @@
+{
+    // See http://go.microsoft.com/fwlink/?LinkId=827846
+    // for the documentation about the extensions.json format
+    "recommendations": [
+        // Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
+        "Rubymaniac.vscode-direnv",
+        "castwide.solargraph",
+        "CoenraadS.bracket-pair-colorizer",
+        "daltonjorge.scala",
+        "davidhouchin.whitespace-plus",
+        "dbaeumer.vscode-eslint",
+        "itryapitsin.Scala",
+        "kaiwood.endwise",
+        "mauve.terraform",
+        "mechatroner.rainbow-csv",
+        "misogi.ruby-rubocop",
+        "ms-azuretools.vscode-docker",
+        "ms-python.python",
+        "ms-vscode.cpptools",
+        "ms-vscode.Go",
+        "octref.vetur",
+        "rebornix.ruby",
+        "RomanPeshkov.vscode-text-tables",
+        "rust-lang.rust",
+        "sidthesloth.html5-boilerplate",
+        "slevesque.vscode-hexdump",
+        "vadimcn.vscode-lldb",
+        "wmaurer.vscode-jumpy",
+        "zxh404.vscode-proto3",
+    ]
+}
