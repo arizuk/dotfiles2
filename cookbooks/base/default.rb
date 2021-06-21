@@ -2,7 +2,7 @@ node.reverse_merge!(
   os: run_command('uname').stdout.strip.downcase,
   bin_dir: "#{ENV['HOME']}/bin",
   shell_rc_file: "#{ENV['HOME']}/.zshrc.local",
-  setting_dir: File.expand_path('../../settings', __FILE__)
+  setting_dir: File.expand_path('../../../settings', __FILE__)
 )
 
 directory "#{ENV['HOME']}/bin" do
