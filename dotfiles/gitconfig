@@ -18,7 +18,7 @@
 	w = whatchanged
 	up = pull
 	see = browse
-	brd = "!git br -d $(git branch --merged|grep -v master)"
+	brd = "!git br -d $(git branch --merged|grep -v master|grep -v '*')"
 [core]
 	editor = vim -c \"set fenc=utf-8\"
 	excludesfile = ~/.gitignore_global
