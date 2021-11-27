@@ -12,5 +12,7 @@ if darwin?
     command '~/.poetry/bin/poetry completions zsh > $(brew --prefix)/share/zsh/site-functions/_poetry'
   end
 else
-  raise NotImplementedError
+  execute 'Enable poetry command completion' do
+    command '~/.poetry/bin/poetry completions zsh > /usr/local/share/zsh/site-functions/_poetry'
+  end
 end
