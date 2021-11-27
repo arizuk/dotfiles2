@@ -9,9 +9,9 @@ directory "#{ENV['HOME']}/bin" do
   owner node[:user]
 end
 
-define :executable_link do
+define :executable_link, bin_name: nil do
   path = params[:name]
-  bin_name = File.basename(path)
+  bin_name = params[:bin_name] || File.basename(path)
   link File.join(node[:bin_dir], bin_name) do
     to path
     user node[:user]
@@ -21,7 +21,6 @@ end
 define :shell_rc_block do
   cmd = params[:name]
   file node[:shell_rc_file] do
-    user node[:user]
     action :edit
     block do |content|
       content << "\n" + cmd unless content.include?(cmd)
@@ -67,6 +66,15 @@ define :github_binary, version: nil, repository: nil, archive: nil, binary_path:
   end
   link bin_link_path do
     to bin_path
+    user node[:user]
+  end
+end
+
+
+define :cargo_install, bin_name: nil do
+  bin_name = params[:bin_name] || params[:name]
+  execute "#{ENV['HOME']}/.cargo/bin/cargo install #{params[:name]}" do
+    not_if "test -f #{ENV['HOME']}/.cargo/bin/#{bin_name}"
     user node[:user]
   end
 end

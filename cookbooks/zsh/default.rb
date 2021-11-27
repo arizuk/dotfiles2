@@ -1,5 +1,18 @@
 package 'zsh'
 
+# Install dependent binaries
+if darwin?
+  package 'starship'
+  package 'sk'
+  include_cookbook 'bat'
+else
+  include_cookbook 'rustup'
+  cargo_install :starship
+  cargo_install :skim
+  include_cookbook 'bat'
+end
+
+
 git "#{ENV['HOME']}/.oh-my-zsh" do
   user node[:user]
   repository 'https://github.com/ohmyzsh/ohmyzsh.git'
@@ -10,13 +23,6 @@ git "#{ENV['HOME']}/.zsh-completions" do
   repository 'https://github.com/zsh-users/zsh-completions'
 end
 
-if darwin?
-  package 'starship'
-  package 'sk'
-  package 'bat'
-else
-  raise NotImplementedError
-end
 
 remote_file "#{node[:bin_dir]}/preview.sh" do
   owner node[:user]
