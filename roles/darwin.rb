@@ -14,6 +14,7 @@ include_cookbook 'poetry'
 include_cookbook 'tmux'
 include_cookbook 'vim'
 include_cookbook 'vscode'
+include_cookbook 'rustup'
 
 package 'bat'
 package 'coreutils'
