@@ -6,13 +6,7 @@ end
 
 shell_rc_block 'export PATH=~/.poetry/bin:$PATH'
 
-if darwin?
-  execute 'Enable poetry command completion' do
-    user node[:user]
-    command '~/.poetry/bin/poetry completions zsh > $(brew --prefix)/share/zsh/site-functions/_poetry'
-  end
-else
-  execute 'Enable poetry command completion' do
-    command '~/.poetry/bin/poetry completions zsh > /usr/local/share/zsh/site-functions/_poetry'
-  end
+execute 'Enable poetry command completion' do
+  user node[:user]
+  command '~/.poetry/bin/poetry completions zsh > ~/.zfunc/_poetry'
 end

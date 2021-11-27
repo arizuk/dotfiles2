@@ -40,3 +40,7 @@ dotfile 'zshrc.d'
 file "#{ENV['HOME']}/.zshrc.local" do
   owner node[:user]
 end
+
+directory "#{ENV['HOME']}/.zfunc" do
+  owner node[:user]
+end
