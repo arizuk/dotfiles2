@@ -29,3 +29,5 @@ package 'tig'
 package 'tree'
 package 'watch'
 package 'wget'
+
+include_cookbook 'mas'
