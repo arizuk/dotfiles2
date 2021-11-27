@@ -1,5 +1,6 @@
 include_cookbook 'base'
 
+include_cookbook 'z'
 include_cookbook 'zsh'
 include_cookbook 'ghq'
 include_cookbook 'git'
