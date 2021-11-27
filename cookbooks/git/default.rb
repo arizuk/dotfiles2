@@ -9,7 +9,8 @@ end
 if darwin?
   executable_link '/usr/local/share/git-core/contrib/diff-highlight/diff-highlight'
 else
-  execute "make diff-highlight" do
+  execute "Make diff-highlight" do
+    command "make diff-highlight"
     cwd "/usr/share/doc/git/contrib/diff-highlight"
     not_if "test -f diff-highlight"
   end
