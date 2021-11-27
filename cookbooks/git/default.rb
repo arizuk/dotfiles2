@@ -9,7 +9,12 @@ end
 if darwin?
   executable_link '/usr/local/share/git-core/contrib/diff-highlight/diff-highlight'
 else
-  raise NotImplementedError
+  execute "make diff-highlight" do
+    cwd "/usr/share/doc/git/contrib/diff-highlight"
+    not_if "test -f diff-highlight"
+  end
+
+  executable_link '/usr/share/doc/git/contrib/diff-highlight/diff-highlight'
 end
 
 # vimdiff dependency
