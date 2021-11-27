@@ -1,8 +1,8 @@
 if darwin?
   package 'direnv'
 else
-  execute "curl -sfL https://direnv.net/install.sh |bin_path=#{ENV['HOME']}/bin bash" do
-    not_if "test -f #{ENV['HOME']}/bin/direnv"
+  execute "curl -sfL https://direnv.net/install.sh |bin_path=#{node[:bin_dir]} bash" do
+    not_if "test -f #{node[:bin_dir]}/direnv"
     user node[:user]
   end
 end
