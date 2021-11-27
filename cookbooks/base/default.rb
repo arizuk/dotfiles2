@@ -69,12 +69,3 @@ define :github_binary, version: nil, repository: nil, archive: nil, binary_path:
     user node[:user]
   end
 end
-
-
-define :cargo_install, bin_name: nil do
-  bin_name = params[:bin_name] || params[:name]
-  execute "#{ENV['HOME']}/.cargo/bin/cargo install #{params[:name]}" do
-    not_if "test -f #{ENV['HOME']}/.cargo/bin/#{bin_name}"
-    user node[:user]
-  end
-end
