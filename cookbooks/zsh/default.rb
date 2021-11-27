@@ -4,14 +4,18 @@ package 'zsh'
 if darwin?
   package 'starship'
   package 'sk'
-  include_cookbook 'bat'
+  package 'bat'
 else
   include_cookbook 'rustup'
   cargo_install :starship
-  cargo_install :skim
-  include_cookbook 'bat'
+  cargo_install :skim do
+    bin_name 'sk'
+  end
+  package 'bat'
+  executable_link '/usr/bin/batcat' do
+    bin_name 'bat'
+  end
 end
-
 
 git "#{ENV['HOME']}/.oh-my-zsh" do
   user node[:user]
