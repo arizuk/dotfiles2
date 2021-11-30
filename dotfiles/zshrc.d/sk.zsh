@@ -1,6 +1,6 @@
 function sk-select-history()
 {
-    BUFFER=$(fc -l -n 1 | sk --tac --query "$LBUFFER")
+    BUFFER=$(fc -l -n -r 1| sk --no-sort --query "$LBUFFER")
     CURSOR=$#BUFFER             # move cursor
     zle -R -c                   # refresh
 }
