@@ -7,5 +7,5 @@ if cpu_arch == 'x86_64'
     binary_path "ghq_#{node[:os]}_amd64/ghq"
   end
 else
-  raise NotImplementedError
+  package 'ghq'
 end

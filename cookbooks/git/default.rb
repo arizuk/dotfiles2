@@ -7,7 +7,8 @@ file "#{ENV['HOME']}/.gitignore_global" do
 end
 
 if darwin?
-  executable_link '/usr/local/share/git-core/contrib/diff-highlight/diff-highlight'
+  raise NotImplementedError
+  # executable_link '/usr/local/share/git-core/contrib/diff-highlight/diff-highlight'
 else
   execute "Make diff-highlight" do
     command "make diff-highlight"

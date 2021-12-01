@@ -1,5 +1,4 @@
 include_cookbook 'base'
-
 include_cookbook 'homebrew'
 
 include_cookbook 'z'
@@ -22,13 +21,16 @@ package 'httpie'
 package 'jq'
 package 'nkf'
 package 'the_silver_searcher'
-package 'tfenv'
 package 'tig'
 package 'tree'
 package 'watch'
 package 'wget'
 
 include_cookbook 'mas'
+
+homebrew_cask 'notion'
+homebrew_cask 'slack'
+homebrew_cask 'iterm2'
 
 include_cookbook 'karabiner'
 include_cookbook 'vscode'
