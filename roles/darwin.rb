@@ -32,5 +32,6 @@ homebrew_cask 'notion'
 homebrew_cask 'slack'
 homebrew_cask 'iterm2'
 
+include_cookbook 'macos'
 include_cookbook 'karabiner'
 include_cookbook 'vscode'
